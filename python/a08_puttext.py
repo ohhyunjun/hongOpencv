@@ -32,7 +32,7 @@ def main():
     korean_text = "조금 길지만 한글이 됩니다!!"
     font_size = 30
     # 한국어 폰트 파일 경로 (시스템 폰트 사용, 예: Windows - 'malgun.ttf', macOS - 'AppleGothic.ttf', Linux - Noto Sans)
-    font_path = '/home/aa/hongOpencv/data/NanumPenScript-Regular.ttf'  # 경로를 실제 폰트로 변경 (없으면 다운로드: Google Noto Sans KR)
+    font_path = '/home/hyunjun/hongOpencv/data/NanumPenScript-Regular.ttf'  # 경로를 실제 폰트로 변경 (없으면 다운로드: Google Noto Sans KR)
     try:
         font = ImageFont.truetype(font_path, font_size)
     except:
@@ -59,3 +59,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+   
