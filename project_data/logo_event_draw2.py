@@ -18,7 +18,7 @@ logo = cv2.resize(logo, (100, 100), logo)
 logo = cv2.bitwise_not(logo)
 
 
-def make_text_image(korean_text, font_size, color):
+def make_text_image(korean_text, font_size, color):# 한글폰트 저장 및 로드
     font_path = 'data/NanumPenScript-Regular.ttf'
     try:
         font = ImageFont.truetype(font_path, font_size)
@@ -26,19 +26,19 @@ def make_text_image(korean_text, font_size, color):
         font = ImageFont.load_default()
 
     # 임시 이미지로 텍스트 크기 측정
-    temp_img = Image.new('RGBA', (1, 1))
-    temp_draw = ImageDraw.Draw(temp_img)
-    bbox = temp_draw.textbbox((0, 0), korean_text, font=font)
+    temp_img = Image.new('RGBA', (1, 1)) # 텍스트 그릴 임시 투명 이미지 생성
+    temp_draw = ImageDraw.Draw(temp_img) # 임시 이미지에 그리기 위한 객체 생성
+    bbox = temp_draw.textbbox((0, 0), korean_text, font=font) #
     text_width = bbox[2] - bbox[0]
     text_height = bbox[3] - bbox[1]
 
     # 텍스트 크기에 맞는 이미지 생성 (여백 추가)
-    margin = 5
+    margin = 5 
     img_width = text_width + margin * 2
     img_height = text_height + margin * 2
 
-    pil_img = Image.new('RGBA', (img_width, img_height), (0,0,0,0))
-    draw = ImageDraw.Draw(pil_img)
+    pil_img = Image.new('RGBA', (img_width, img_height), (0,0,0,0)) 
+    draw = ImageDraw.Draw(pil_img) 
 
     # 여백을 고려한 텍스트 위치 (bbox의 음수 오프셋 보정)
     x = margin - bbox[0]
