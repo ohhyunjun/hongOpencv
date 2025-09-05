@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-
 class Sprite:
     """기본 스프라이트 클래스"""
     def __init__(self, x, y):
